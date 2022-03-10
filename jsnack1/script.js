@@ -5,15 +5,19 @@ console.log('JS OK')
 
 const invitati = ["Jonny", "Samuel", "Ludvig", "Paul", "Mimmo", "Ugo"];
 
+let message = document.querySelector('#check');
+
+let yourName = prompt("Inserisci il tuo nome per accedere alle festa di Gatsby");
+
+console.log(yourName);
+
 let access = false;
 
 if (!access) {
-
-    let yourName = prompt("Inserisci il tuo nome per accedere alle festa di Gatsby");
     for (let i = 0; i < invitati.length; i++) {
         const validName = invitati[i];
 
-        if (yourName === validName) {
+        if (yourName.trim() === validName) {
             access = true;
         }
     }
@@ -24,6 +28,8 @@ console.log(access);
 
 if (access) {
     console.log("benvenuto");
+    message.innerHTML = `"Benvenuto al party, ${yourName}!"`
 } else {
     console.log("Non ti vedo sulla lista");
+    message.innerHTML = `Scusa amico ${yourName}, non ti vedo sulla lista...`
 }
