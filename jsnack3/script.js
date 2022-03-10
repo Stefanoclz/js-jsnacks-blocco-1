@@ -5,19 +5,21 @@ console.log('JS OK')
 
 let result = document.getElementById('result');
 
+let inseriti = document.getElementById('inseriti');
+
 const calcola = document.getElementById('calcola');
 
-
+calcola.classList.add("bigger-btn");
 
 calcola.addEventListener('click', function () {
     let sum = 0;
     let number = parseInt(prompt('Inserisci un numero a 4 cifre'));
+    inseriti.innerText = `Numero inserito: ${number}`;
     while (number) {
         sum += number % 10;
         number = Math.floor(number / 10);
     }
 
-    console.log(sum);
 
     result.innerHTML = `Il risultato dei numeri inseriti è: ${sum}`;
 })
